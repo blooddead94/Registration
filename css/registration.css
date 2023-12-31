@@ -1,17 +1,18 @@
-@import url(css/reset.css);
+@import url('reset.css');
 
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 12px;
 }
 
 
 .container {
   position: relative;
-  max-width: width 500px;
   background: url(../image/background/david-marcu.png) no-repeat center/cover;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .container::before {
@@ -19,9 +20,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 0;
   pointer-events: none;
 }
@@ -29,17 +31,23 @@ body {
 .container_form {
   position: relative;
   margin-left: auto;
-  width: 340px;
-  display: block;
-  justify-content: center;
   text-align: center;
-  margin-left: 0 auto;
-  padding: 60px;
+  padding: 60px 0;
+  max-width: 500px;
+  height: 100%;
   background: url(/image/background/Rectangle.png) no-repeat center/cover;
   z-index: 1;
+  overflow: auto;
 }
 
 /* Вход Регистрация */
+
+.form {
+  max-width: 340px;
+  margin: 0 auto;
+
+}
+
 
 .switch_inner {
   margin-bottom: 20px;
@@ -60,7 +68,7 @@ body {
   border-radius: 50px;
   background: none;
   cursor: pointer;
-  outline: 1px solid black;
+  border: 1px solid black;
   color: white;
   position: relative;
 }
@@ -68,9 +76,10 @@ body {
 .switch_inner input+label::before {
   content: '';
   position: absolute;
+  top: 2px;
   left: 2px;
+  bottom: 2px;
   width: 50%;
-  height: 33px;
   border-radius: 50px;
   background: green;
   transition: .3s linear;
@@ -79,8 +88,10 @@ body {
 .switch_inner span {
   position: relative;
   flex: 1 1 50%;
+}
 
-
+.switch_inner input:checked+label::before {
+  left: calc(50% - 2px);
 }
 
 
@@ -112,6 +123,7 @@ body {
   display: block;
   padding: 29px;
   color: white;
+  font-size: 30px;
 }
 
 
@@ -148,7 +160,7 @@ body {
 
 .btn_text {
   font-family: Roboto, serif;
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 12px;
   color: green;
 }
@@ -165,7 +177,8 @@ body {
 }
 
 .links-form {
+  padding: 20px;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
 }
